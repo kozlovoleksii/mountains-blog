@@ -1,0 +1,10 @@
+.section-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+
+  margin-top: 15px;
+}

@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Prompt", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body.home .menu {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  z-index: 200; 
+  background-color: transparent;
+}
+

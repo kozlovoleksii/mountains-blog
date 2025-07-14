@@ -1,0 +1,55 @@
+.about {
+  padding: 100px 20px 80px;
+  background-image: url("./images/about-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* затемнення */
+  z-index: 0;
+}
+
+.about__container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.about__title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.about__text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.about__content {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  border-radius: 8px;
+  line-height: 1.6;
+  text-align: left;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+
