@@ -6,6 +6,10 @@
   color: #fff;
   min-height: 100vh;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .gallery__overlay {
@@ -73,4 +77,19 @@
 
 .gallery__nav:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (min-width: 1600px) {
+  .gallery {
+    min-height: 80vh;
+    padding: 60px 20px;
+  }
+
+  .gallery__image-wrapper {
+    height: 350px;
+  }
+
+  .gallery__title {
+    font-size: 36px;
+  }
 }

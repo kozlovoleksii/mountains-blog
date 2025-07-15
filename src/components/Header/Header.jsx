@@ -2,21 +2,30 @@ import { Link, useLocation } from "react-router-dom";
 import TopSection from "../TopSection/TopSection";
 import "./Header.css";
 import { smoothScrollTo } from "../../utils/smoothScrollTo";
-import { useEffect } from "react";
-import logo from '../../assets/images/Logo.png';
+import { useEffect, useState } from "react";
+import logo from "../../assets/images/Logo.png";
 
 const Header = () => {
+  const [isAtTop, setIsAtTop] = useState(true);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+    };
 
-useEffect(() => {
-  if (location.pathname !== "/") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-}, [location.pathname]);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-  
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
 
   return (
     <header className={`header ${isHomePage ? "header--static" : ""}`}>
@@ -54,8 +63,12 @@ useEffect(() => {
         <>
           <TopSection />
           <div
-            className="arrows-container"
-          onClick={() => smoothScrollTo(window.innerHeight * 3, 2000)}
+            className={`arrows-container ${
+              !isAtTop ? "arrows-container--disabled" : ""
+            }`}
+            onClick={() =>
+              isAtTop && smoothScrollTo(window.innerHeight * 3, 2000)
+            }
           >
             <div className="arrows"></div>
           </div>
