@@ -26,7 +26,7 @@ A visually rich blog with parallax effect, fog loader animation and page transit
 
 ## 🖼 Preview
 
-<img src="public/img/preview.jpg" alt="Landing Preview" />
+<img src="src/assets/images/preview.jpg" alt="Landing Preview" />
 
 ---
 

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { HashRouter as Router, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header/Header';
 import { AnimatedFog } from './components/FogLoader/AnimatedFog';

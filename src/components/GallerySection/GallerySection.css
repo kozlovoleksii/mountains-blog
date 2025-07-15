@@ -1,7 +1,6 @@
 .gallery {
   position: relative;
   padding: 100px 20px;
-  background-image: url("./images/gallery-bg.webp");
   background-size: cover;
   background-position: center;
   color: #fff;

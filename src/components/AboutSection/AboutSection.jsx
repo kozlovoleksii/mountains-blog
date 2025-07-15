@@ -1,9 +1,12 @@
 import SectionWrapper from "../Layout/SectionWrapper";
 import "./AboutSection.css"
+import bgImage from '../../assets/images/about-bg.webp';
 
 const AboutSection = () => {
   return (
-   <section className="about">
+   <section className="about" style={{
+       backgroundImage: `url(${bgImage})`,
+     }}>
   <SectionWrapper>
     <h2 className="about__title">ABOUT THE PROJECT</h2>
     <p className="about__text">

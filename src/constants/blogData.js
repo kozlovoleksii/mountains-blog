@@ -1,3 +1,7 @@
+import blog1 from '../assets/images/blog1.webp';
+import blog2 from '../assets/images/blog2.webp';
+import blog3 from '../assets/images/blog3.webp';
+
 export const stories = [
   {
     title: "Conquering Everest",
@@ -34,21 +38,21 @@ export const stories = [
 
 export const blogInfo = [
   {
-    img: "./images/blog1.webp",
+    img: blog1,
     title: "Conquering Everest",
     date: "June 2025",
     content:
       "A thrilling story of one climber’s journey to the top of the world...",
   },
   {
-    img: "./images/blog2.webp",
+    img: blog2,
     title: "Mystic Night in Patagonia",
     date: "May 2025",
     content:
       "Camping beneath the starry skies, with nothing but silence and snow-covered peaks...",
   },
   {
-    img: "./images/blog3.webp",
+    img: blog3,
     title: "Solo Ascent in the Alps",
     date: "April 2025",
     content:

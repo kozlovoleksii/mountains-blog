@@ -4,6 +4,7 @@ import SectionWrapper from "../Layout/SectionWrapper";
 import Modal from "../Modal/Modal";
 import {blogInfo, stories} from "../../constants/blogData"
 import BlogCard from "../BlogCard/BlogCard";
+import bgImage from '../../assets/images/blog-bg.webp';
 
 const BlogSection = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,7 +21,9 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="blog">
+    <section className="blog" style={{
+    backgroundImage: `url(${bgImage})`,
+  }}>
       <SectionWrapper>
         <h2 className="blog__title">Latest Stories</h2>
         <p className="blog__intro">

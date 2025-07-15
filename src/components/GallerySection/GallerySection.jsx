@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { images } from "../../constants/galleryData";
 import "./GallerySection.css";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
+import bgImage from '../../assets/images/gallery-bg.webp';
 
 const GallerySection = () => {
   const [index, setIndex] = useState(0);
@@ -47,7 +48,9 @@ const GallerySection = () => {
   }, []);
 
   return (
-    <section className="gallery">
+    <section className="gallery" style={{
+               backgroundImage: `url(${bgImage})`,
+             }}>
       <div className="gallery__overlay" />
       <h2 className="gallery__title">Photo Gallery</h2>
 
@@ -56,7 +59,7 @@ const GallerySection = () => {
           <GrFormPreviousLink />
         </button>
 
-        <div className="gallery__image-wrapper">
+        <div className="gallery__image-wrapper" >
           <img
             src={images[index].src}
             alt={images[index].caption}

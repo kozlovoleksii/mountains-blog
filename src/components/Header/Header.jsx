@@ -3,6 +3,7 @@ import TopSection from "../TopSection/TopSection";
 import "./Header.css";
 import { smoothScrollTo } from "../../utils/smoothScrollTo";
 import { useEffect } from "react";
+import logo from '../../assets/images/Logo.png';
 
 const Header = () => {
   const location = useLocation();
@@ -33,7 +34,7 @@ useEffect(() => {
           </li>
           <li className="menu__item">
             <Link to="/" className="menu__link menu__logo-link">
-              <img src="./images/Logo.png" alt="" className="logo" />
+              <img src={logo} alt="" className="logo" />
             </Link>
           </li>
           <li className="menu__item">
