@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import "./Modal.css";
+import { useEffect, useState } from "react";
 
 const Modal = ({ isOpen, onClose, title, content }) => {
   const [shouldRender, setShouldRender] = useState(false);

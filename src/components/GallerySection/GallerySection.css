@@ -1,15 +1,23 @@
 .gallery {
-  position: relative;
-  padding: 100px 20px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
   background-size: cover;
   background-position: center;
-  color: #fff;
-  min-height: 100vh;
-  text-align: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.gallery__container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .gallery__overlay {
@@ -21,9 +29,10 @@
 
 .gallery__title {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-size: 42px;
   margin-bottom: 40px;
+  color: #fff;
 }
 
 .gallery__slider {
@@ -32,6 +41,9 @@
   justify-content: center;
   position: relative;
   z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .gallery__image-wrapper {
@@ -79,6 +91,8 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* ----------------------- DESKTOP ----------------------- */
+
 @media screen and (min-width: 1600px) {
   .gallery {
     min-height: 80vh;
@@ -91,5 +105,71 @@
 
   .gallery__title {
     font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .gallery__image-wrapper {
+    height: 500px;
+  }
+
+  .gallery__title {
+    font-size: 48px;
+  }
+
+  .gallery {
+    padding: 80px 40px;
+  }
+}
+
+/* ----------------------- MOBILE ----------------------- */
+
+@media (max-width: 768px) {
+  .gallery {
+    align-items: flex-start; 
+    padding-top: 200px;
+  }
+
+  .gallery__container {
+    padding: 0 16px;
+  }
+
+  .gallery__title {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .gallery__image-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+  }
+
+  .gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery__slider {
+    flex-direction: column;
+    padding: 0;
+    gap: 16px;
+  }
+
+  .gallery__nav {
+    display: none;
+  }
+
+  .gallery__caption {
+    font-size: 16px;
+    padding: 10px;
   }
 }

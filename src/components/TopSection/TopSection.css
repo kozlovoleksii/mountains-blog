@@ -12,7 +12,7 @@
   align-items: center;
   text-align: center;
 
-  z-index: 0
+  z-index: 0;
 }
 
 @supports (animation-timeline: scroll()) {
@@ -105,7 +105,18 @@
   font-size: 24px;
 }
 
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px !important;
+    text-align: center;
+    line-height: 1.2;
+  }
 
+  .text {
+    font-size: 16px !important;
+    text-align: center;
+  }
+}
 
 @keyframes arrow {
   0% {

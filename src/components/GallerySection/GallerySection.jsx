@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { images } from "../../constants/galleryData";
 import "./GallerySection.css";
+import { useEffect, useRef, useState } from "react";
+import { images } from "../../constants/galleryData";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import bgImage from '../../assets/images/gallery-bg.webp';
 
@@ -8,6 +8,38 @@ const GallerySection = () => {
   const [index, setIndex] = useState(0);
   const [isFading, setIsFading] = useState(false); 
   const intervalRef = useRef(null);
+
+  const touchStartX = useRef(null);
+const touchEndX = useRef(null);
+
+const minSwipeDistance = 50;
+
+const onTouchStart = (e) => {
+  touchStartX.current = e.changedTouches[0].clientX;
+};
+
+const onTouchEnd = (e) => {
+  touchEndX.current = e.changedTouches[0].clientX;
+  handleSwipe();
+};
+
+const handleSwipe = () => {
+  if (!touchStartX.current || !touchEndX.current) return;
+
+  const distance = touchStartX.current - touchEndX.current;
+
+  if (Math.abs(distance) < minSwipeDistance) return;
+
+  if (distance > 0) {
+    nextSlide();
+  } else {
+    prevSlide();
+  }
+
+  // обнуляємо
+  touchStartX.current = null;
+  touchEndX.current = null;
+};
 
   const startAutoSlide = () => {
     intervalRef.current = setInterval(() => {
@@ -48,31 +80,36 @@ const GallerySection = () => {
   }, []);
 
   return (
-    <section className="gallery" style={{
-               backgroundImage: `url(${bgImage})`,
-             }}>
-      <div className="gallery__overlay" />
-      <h2 className="gallery__title">Photo Gallery</h2>
+    <section className="gallery" style={{ backgroundImage: `url(${bgImage})` }}>
+  <div className="gallery__overlay" />
+  
+  <div className="gallery__container">
+    <h2 className="gallery__title">Photo Gallery</h2>
 
-      <div className="gallery__slider">
-        <button className="gallery__nav left" onClick={prevSlide}>
-          <GrFormPreviousLink />
-        </button>
+    <div className="gallery__slider" onTouchStart={onTouchStart}
+  onTouchEnd={onTouchEnd}>
+      <button className="gallery__nav left" 
+        onClick={prevSlide}
+      >
+        <GrFormPreviousLink />
+      </button>
 
-        <div className="gallery__image-wrapper" >
-          <img
-            src={images[index].src}
-            alt={images[index].caption}
-            className={`gallery__image ${isFading ? "fade" : ""}`}
-          />
-          <p className="gallery__caption">{images[index].caption}</p>
-        </div>
-
-        <button className="gallery__nav right" onClick={nextSlide}>
-          <GrFormNextLink />
-        </button>
+      <div className="gallery__image-wrapper">
+        <img
+          src={images[index].src}
+          alt={images[index].caption}
+          className={`gallery__image ${isFading ? "fade" : ""}`}
+        />
+        <p className="gallery__caption">{images[index].caption}</p>
       </div>
-    </section>
+
+      <button className="gallery__nav right" onClick={nextSlide}>
+        <GrFormNextLink />
+      </button>
+    </div>
+  </div>
+</section>
+
   );
 };
 

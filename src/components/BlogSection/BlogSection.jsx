@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import "./BlogSection.css";
+import { useState } from "react";
+import {blogInfo, stories} from "../../constants/blogData"
 import SectionWrapper from "../Layout/SectionWrapper";
 import Modal from "../Modal/Modal";
-import {blogInfo, stories} from "../../constants/blogData"
 import BlogCard from "../BlogCard/BlogCard";
 import bgImage from '../../assets/images/blog-bg.webp';
 

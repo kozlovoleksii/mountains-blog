@@ -6,3 +6,4 @@ export default defineConfig({
   base: '/mountains-blog/',
   plugins: [react()],
 })
+

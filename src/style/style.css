@@ -26,7 +26,6 @@ body {
 
 body.home .menu {
   position: fixed;
-  top: 30px;
   left: 0;
   width: 100%;
   z-index: 200; 

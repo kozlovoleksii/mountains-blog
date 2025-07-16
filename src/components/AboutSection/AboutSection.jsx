@@ -1,5 +1,5 @@
-import SectionWrapper from "../Layout/SectionWrapper";
 import "./AboutSection.css"
+import SectionWrapper from "../Layout/SectionWrapper";
 import bgImage from '../../assets/images/about-bg.webp';
 
 const AboutSection = () => {
